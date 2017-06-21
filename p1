@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<title>斐波那契数列</title>
+	<script>
+		function showAll(){
+			var a=[];
+			var i=0;
+			a[0]=1;
+			a[1]=1;
+			var out="<table><tr>";
+			for(;i<100;i++){
+				a[i+2]=a[i]+a[i+1];//计算斐波那契数列
+				out+="<td>";
+				out+=a[i];
+				out+="</td>";
+				if((i+1)%5==0){
+					out+="</tr>";//五个数字为一组换行
+					out+="<tr>";
+				}
+			}
+			out+="</tr></table>";
+			document.getElementById('div1').innerHTML=out;
+		}
+		window.onload=showAll;
+	</script>
+</head>
+<center><b>1~100斐波那契数列</b></center><br/>
+<div id="div1" align="center"></div>	
+</body>
+</html>
