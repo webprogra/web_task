@@ -26,7 +26,8 @@
 		window.onload=showAll;
 	</script>
 </head>
-<center><b>1~100斐波那契数列</b></center><br/>
-<div id="div1" align="center"></div>	
+<body>
+	<center><b>1~100斐波那契数列</b></center><br/>
+	<div id="div1" align="center"></div>	
 </body>
 </html>
