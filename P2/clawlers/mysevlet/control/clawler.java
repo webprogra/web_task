@@ -64,22 +64,22 @@ public class clawler extends HttpServlet {
 		request.setAttribute("bean",bean);
 		request.setCharacterEncoding("gb2312");
 		String url=request.getParameter("url");
-        Document doc = Jsoup.connect(url).get();
-        Elements jpgs=doc.select("img[src$=.jpg!qt226]");
-        int size=jpgs.size();
-        bean.setNum(size);
-        String[]linkSrc=new String[size];
-        String[]linkText=new String[size];
-        int i=0;
-        for (Element src : jpgs) {
-        	String link=src.attr("abs:src");
-        	linkSrc[i]=(src.attr("abs:src")).substring(0,(link.length()-6));
-        	linkText[i]=src.attr("alt");
-        	i++;
-        }
-        bean.setJpgs(linkSrc);
-        bean.setName(linkText);
-        RequestDispatcher dispatcher=request.getRequestDispatcher("show.jsp");
+        	Document doc = Jsoup.connect(url).get();//链接要抓取图片的目标网站
+        	Elements jpgs=doc.select("img[src$=.jpg!qt226]");//得到后缀为jpg!qt226的图片链接
+        	int size=jpgs.size();//统计得到的链接个数
+        	bean.setNum(size);
+        	String[]linkSrc=new String[size];
+        	String[]linkText=new String[size];
+        	int i=0;
+       	 	for (Element src : jpgs) {//将链接以及图片标题以字符串数组的形式存入bean中
+        		String link=src.attr("abs:src");
+        		linkSrc[i]=(src.attr("abs:src")).substring(0,(link.length()-6));
+        		linkText[i]=src.attr("alt");
+        		i++;
+        	}
+       	 	bean.setJpgs(linkSrc);
+        	bean.setName(linkText);
+        	RequestDispatcher dispatcher=request.getRequestDispatcher("show.jsp");
 		dispatcher.forward(request,response);
 	}
 
