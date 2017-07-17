@@ -1,3 +1,4 @@
+#-*-coding:UTF-8-*-
 class Student
   @@students=Array.new(100){Array.new(4)}
   def init
@@ -15,7 +16,7 @@ class Student
   def show
     i=0
     while i<100
-      print "id:#{@@students[i][0]}\t\t姓名:#{@@students[i][1]}\t\t性别:#{@@students[i][2]}\t\t年  龄:#{@@students[i][3]}\n"
+      print "id:#{@@students[i][0]}\t\t姓名:#{@@students[i][1]}\t\t性别:#{@@students[i][2]}\t\t年龄:#{@@students[i][3]}\n"
       i+=1
     end
   end
