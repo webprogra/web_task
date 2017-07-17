@@ -1,6 +1,7 @@
 #-*-coding:UTF-8-*-
 class Student
-  @@students=Array.new(100){Array.new(4)}
+  @@students=Array.new(100){Array.new(4)}#存储学生信息
+  #初始化学生信息
   def init
     i=0
     while i<100
@@ -13,6 +14,7 @@ class Student
       i+=1
     end
   end
+  #遍历学生信息并展示
   def show
     i=0
     while i<100
