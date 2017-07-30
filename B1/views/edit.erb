@@ -1,0 +1,17 @@
+<html>
+<body>
+<h2>编辑留言</h2>
+<%message=@message.split("#")%>
+<form action="/add" method="post">
+<input type="hidden" name="id" value="<%=message[0]%>">
+<br/>author:<input type="text" name="author" value="<%=message[2]%>">
+<br/>message:
+<br/><textarea name="message" column="20" rows="10"><%=message[1]%></textarea>
+<br/><input type="submit" value="修改留言█">
+</form>
+<form action="/add" method="post">
+<input type="hidden" name="id" value="<%=message[0]%>">
+<input type="hidden" name="author" value="<%=message[2]%>">
+<input type="hidden" name="message" value="<%=message[1]%>">
+<input type="submit" value="取消编辑">
+</form></body></html>
