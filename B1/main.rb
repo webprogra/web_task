@@ -10,13 +10,19 @@ post '/add' do
     redirect to('add_error')
   end
   message=Message.new
-  @messages=message.addMessage(params[:author],params[:message])
+  @messages=message.addMessage(params[:id],params[:author],params[:message])
   erb:show
 end
 post '/delete' do
   message=Message.new
   @messages=message.deleteMessage(params[:id])
   erb:show
+end
+post '/edit' do
+  message=Message.new
+  @message=message.editMessage(params[:id])
+  message.deleteMessage(params[:id])
+  erb:edit
 end
 get '/check_id' do
   message=Message.new
