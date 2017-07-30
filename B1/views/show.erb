@@ -10,7 +10,7 @@
 </form>
 <table border=1>
 <tr>
-<td>id</td><td>message</td><td>author</td><td>created_at</td><td></td>
+<td>id</td><td>message</td><td>author</td><td>created_at</td><td>...</td><td>...</td>
 <%  message=Array.new
   ((@messages).length).times do|t|
   message=(@messages[@messages.length-t-1]).split("#")
@@ -25,10 +25,16 @@
     <input type="submit" value="delete">
     </form>
 </td>
+<td><form action="/edit" method="post">
+    <input type="hidden" value="<%=message[0]%>" name="id">
+    <input type="submit" value="edit">
+    </form>
+</td>
 </tr>
 <%end
 %>
 </table>
+
 <br/>
 <form action="/check_id" method="get">
 <input type="text" name="id">
