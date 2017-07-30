@@ -1,0 +1,22 @@
+<html>
+<body>
+<table border=1>
+<tr>
+<td>id</td><td>message</td><td>author</td><td>created_at</td>
+<%  message=Array.new
+  ((@message).length).times do|t|
+  message=(@message[@message.length-t-1]).split("#")
+%>
+</tr>
+<tr>
+<td><%=message[0]%></td>
+<td><%=message[1]%></td>
+<td><%=message[2]%></td>
+<td><%=message[3]%></td>
+</tr>
+<%end
+%>
+<form action="/" method="get">
+<input type="submit" value="返回首页">
+</form>
+</table>
