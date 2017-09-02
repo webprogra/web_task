@@ -1,0 +1,32 @@
+<html><head>
+<title>show</title>
+</head>
+<body>
+<h1>首页</h1>
+<form action="/add" method="post">
+<input type="hidden" name="id" value="">
+<br/>author:<input type="text" name="author">
+<br/>message:
+<br/><textarea name="message" column="20" rows="10"></textarea>
+<br/><input type="submit" value="添加留言">
+</form>
+<%  if @messages==nil
+      continue
+    else
+      @messages.each do |i|
+        puts i
+      end
+    end
+%>
+<br/>
+<form action="/check_id" method="get">
+<input type="text" name="id">
+<input type="submit" value="check">(按id查询记录）
+</form>
+<br/>
+<form action="/check_author" method="get">
+<input type="text" name="author">
+<input type="submit" value="check">(按author查询记录）
+</form>
+</body>
+</html>
