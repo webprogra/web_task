@@ -1,0 +1,27 @@
+<%require 'active_record'
+ require 'mysql2'
+%>
+<html><head>
+<title>show</title>
+</head>
+<body>
+<br/>查询结果:
+<table border=1>
+<tr><th>id</th><th>content</th><th>user_id</th><th>created_at</th></tr>
+<%
+  if @messages==false
+%><br/>查询信息为空!
+<%
+  else
+   @messages.each do |i|
+%><tr><td>
+<%=i.id%></td><td><%=i.content%></td><td><%=i.user_id%></td><td><%=i.created_at%></td></tr>
+<%end
+end
+%>
+</table>
+<form action="/" method="post">
+<input type="submit" value="返回主页">
+</form>
+</body>
+</html>
