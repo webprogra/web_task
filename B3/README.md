@@ -29,3 +29,10 @@ name | type
 id | int
 username |varchar(255)
 password |varchar(255)
+
+
+| Name | Academy | score |
+| - | :-: | -: |
+| Harry Potter | Gryffindor| 90 |
+| Hermione Granger | Gryffindor | 100 |
+| Draco Malfoy | Slytherin | 90 |
