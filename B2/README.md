@@ -9,7 +9,32 @@ signup_error.erb为注册时信息填写不正确转向的页面;
 exit.erb为用户未在登录状态时转向的页面;
 add_error.erb为用户添加留言格式错误时转向的页面;
 result.erb用户查询信息结果页面;
+
+
 数据库构建:
-数据库:create database message
-表:create table users(id int not null auto_increment,username varchar(255) character set gb2312,password varchar(255) character set gb2312,primary key(id));
+
+数据库名称:message
+
+messages:
+
+
+| Name | Type | Remarks |
+| - | :-: | -: |
+| id | int | not null |
+| content | varchar(255) | 留言内容|
+| user_id | varchar(255) | 留言人id |
+| created_at | date | 发表时间 |
+
+
+users:
+
+
+| Name | Type | Remarks |
+| - | :-: | -: |
+| id | int | not null |
+| admin_name | varchar(255) | 管理员姓名 |
+| password | varchar(255) | 密码 |
+
+
+建表语句:create table users(id int not null auto_increment,username varchar(255) character set gb2312,password varchar(255) character set gb2312,primary key(id));
 create table messages(id int not null auto_increment,content varchar(255) character set gb2312,user_id int,created_at date,primary key(id));
