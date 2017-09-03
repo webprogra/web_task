@@ -21,9 +21,9 @@ comments(留言表):
 | id | int | not null |
 | content | varchar(255) | 留言内容 |
 | post_id | int | 文章id |
-| user_id | varchar(255) | 留言人id |
+| nickname | varchar(255) | 留言人昵称 |
 | created_at | date | 发表时间 |
-
+| allowed | bool | 是否通过审核 |
 
 feedbacks(反馈表):
 
@@ -32,7 +32,7 @@ feedbacks(反馈表):
 | - | :-: | -: |
 | id | int | not null |
 | content | varchar(255) | 反馈内容|
-| admin_id | varchar(255) | 管理员id |
+| nickname | varchar(255) | 反馈者昵称 |
 | created_at | date | 发表时间 |
 
 
