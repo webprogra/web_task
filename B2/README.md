@@ -1,10 +1,15 @@
-main.rb为sinatra平台,负责转发
-User.rb与Message.rb为数据库模型
-messages.rb为执行的方法
-show.erb为主页面
-login.erb为登录页面
-signup.erb为注册页面
+main.rb为sinatra平台,负责转发;
+User.rb与Message.rb为数据库模型;
+messages.rb为执行的方法;
+show.erb为主页面;
+login.erb为登录页面;
+login_error.erb登录时输入信息错误转向的页面;
+signup.erb为注册页面;
+signup_error.erb为注册时信息填写不正确转向的页面;
+exit.erb为用户未在登录状态时转向的页面;
+add_error.erb为用户添加留言格式错误时转向的页面;
+result.erb用户查询信息结果页面;
 数据库构建:
 数据库:create database message
-表:create table users(id int not null,username varchar(255),password varchar(255),primary key(id));
-create table messages(id int not null,content varchar(255),user_id int,created_at date,primary key(id));
+表:create table users(id int not null auto_increment,username varchar(255) character set gb2312,password varchar(255) character set gb2312,primary key(id));
+create table messages(id int not null auto_increment,content varchar(255) character set gb2312,user_id int,created_at date,primary key(id));
