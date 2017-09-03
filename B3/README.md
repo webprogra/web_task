@@ -2,7 +2,7 @@
 数据库表结构:
 posts(文章表):
 name | type
-|:-: | :-:|
+------|------
 id | int
 name | varchar(255)
 amin_id | int
