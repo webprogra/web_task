@@ -10,14 +10,36 @@
 <br/><textarea name="message" column="20" rows="10"></textarea>
 <br/><input type="submit" value="添加留言">
 </form>
+<table border=1>
+<tr><th>id</th><th>content</th><th>user_id</th><th>created_at</th></tr>
+<tr>
 <%  if @messages==nil
+%>
+<br/>
+<%
       continue
     else
       @messages.each do |i|
-        puts i
+%><td>
+<%
+        puts i.id
+%></td><td>
+<%
+        puts i.content
+%></td><td>
+<%
+        puts i.user_id
+%></td><td>
+<%
+        puts i.created_at
+%></td>
+<%
       end
+%></tr>
+<%
     end
 %>
+</table>
 <br/>
 <form action="/check_id" method="get">
 <input type="text" name="id">
