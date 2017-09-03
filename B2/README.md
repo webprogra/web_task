@@ -1,6 +1,6 @@
 main.rb为sinatra平台,负责转发;
+messages.rb为执行过程中用到的的方法;
 User.rb与Message.rb为数据库模型;
-messages.rb为执行的方法;
 show.erb为主页面;
 login.erb为登录页面;
 login_error.erb登录时输入信息错误转向的页面;
