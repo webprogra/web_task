@@ -31,6 +31,8 @@ username |varchar(255)
 password |varchar(255)
 
 posts(文章表):
+
+
 | Name | Type | Remarks |
 | - | :-: | -: |
 | id | int | not null |
