@@ -30,9 +30,12 @@ id | int
 username |varchar(255)
 password |varchar(255)
 
-
-| Name | Academy | score |
+posts(文章表):
+| Name | Type | Remarks |
 | - | :-: | -: |
-| Harry Potter | Gryffindor| 90 |
-| Hermione Granger | Gryffindor | 100 |
-| Draco Malfoy | Slytherin | 90 |
+| id | int | not null |
+| name | varchar(255) | 文章名称 |
+| content | varchar(255) | 文章内容|
+| admin_id | varchar(255) | 管理员id |
+| type | varchar(255) | 文章类型 |
+| created_at | date | 发表时间 |
