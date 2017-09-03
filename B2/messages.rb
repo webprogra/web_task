@@ -1,4 +1,5 @@
 require './User.rb'
+require './Message.rb'
 require 'active_record'
 require 'mysql2'
 class Messages
