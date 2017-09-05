@@ -1,18 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  namespace:admin do
-    resources:posts,only:[:new,:create,:edit,:update,:destroy]
-    resources:comments,only:[:destroy]
+  resources:admins do 
+    resources:posts,:feedbacks
   end
-  resources :admins do
-    resources :posts
-    resources :feedbacks
-  end
-  resources :posts do
-    resources :comments
-  end
-  resources :admins do
-    post 'login', on: :member
+  resources:posts do
+    resources:comments
   end
   root 'welcome#index'
 end
