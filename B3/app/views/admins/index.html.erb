@@ -1,0 +1,18 @@
+<h2>Add a post:</h2>
+<%= form_for([@admin, @admin.posts.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :context %><br>
+    <%= f.text_field :context %>
+  </p>
+  <p>
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
