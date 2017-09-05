@@ -44,3 +44,4 @@ admins(管理员账户表)
 | id | int | not null |
 | username | varchar(255) | 管理员姓名 |
 | password | varchar(255) | 密码 |
+
