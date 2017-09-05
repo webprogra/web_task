@@ -42,5 +42,5 @@ admins(管理员账户表)
 | Name | Type | Remarks |
 | - | :-: | -: |
 | id | int | not null |
-| admin_name | varchar(255) | 管理员姓名 |
+| username | varchar(255) | 管理员姓名 |
 | password | varchar(255) | 密码 |
