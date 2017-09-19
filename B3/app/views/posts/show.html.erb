@@ -1,0 +1,21 @@
+<%= link_to('登出', destroy_user_session_path, :method => :delete) %> 
+<h1>Article</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+<br/>  created_at:<%=@post.created_at%>
+</p>
+ 
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+ 
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
