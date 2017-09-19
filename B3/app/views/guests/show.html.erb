@@ -1,0 +1,13 @@
+<%= link_to('注册', new_registration_path(:user)) %> | 
+<%= link_to('登录', new_session_path(:user)) %>
+
+<h1>Post</h2>
+<%render 'post'%>
+
+<h2>Comments</h2>
+<%render'comment'%>
+
+<h2>Add a comment:</h2>
+<%=render'comment_form'%>
+ 
+<%= link_to 'Back', guests_path(@post) %>
