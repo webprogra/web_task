@@ -1,0 +1,16 @@
+<p>
+  <%@post.comments.each do |comment|%>
+  <% if comment.allowed==1
+  %>
+  <strong>Commenter:</strong>
+  <%=comment.nickname%><br/>
+  发布于:<%=comment.created_at%>
+</p>
+<p>
+  <strong>Comment:</strong>
+  <%= comment.content %>
+</p>
+  <%else
+      next
+    end%>
+<%end%>
