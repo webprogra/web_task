@@ -1,0 +1,8 @@
+<%= link_to('登出', destroy_user_session_path, :method => :delete) %>
+<h1>Feedback</h1>
+<%@feedbacks.each do |f|%>
+<h3>nickname:</h3><%=f.nickname%><br/>
+发布于:<%=f.created_at%><br/>
+<h3>content:</h3><%=f.content%><br/>
+<%end%>
+<%= link_to 'Back', posts_path %>
