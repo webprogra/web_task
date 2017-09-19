@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
-  belongs_to :admin
-  has_many:comments
-  validates:title,presence:true
-  validates:context,presence:true
+  has_many:comments,dependent: :destroy
+  validates :title, presence: true,
+                    length: { minimum: 5 }
+  validates :content,presence:true,
+                    length:{minimum:10}
 end
