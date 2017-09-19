@@ -1,0 +1,18 @@
+<p>
+  <strong>Commenter:</strong>
+  <%=comment.nickname%><br/>
+  发布于:<%=comment.created_at%>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.content %>
+</p>
+<p>
+<%=link_to 'publish',[comment.post,comment],
+           method: :patch,
+           data: {confirm:'allow pubilsh?'}%>|
+  <%= link_to 'Destroy Comment', [comment.post, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
