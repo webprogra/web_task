@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  resources:admins do 
-    resources:posts,:feedbacks
+  root 'welcome#index'
+  resources:guests do
+    resources:comments
   end
   resources:posts do
     resources:comments
   end
-  root 'welcome#index'
+  resources:feedbacks
+  devise_for :users
 end
