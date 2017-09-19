@@ -45,3 +45,25 @@ admins(管理员账户表)
 | username | varchar(255) | 管理员姓名 |
 | password | varchar(255) | 密码 |
 
+
+建立模型:
+
+bin/rails generate controller Welcome index
+
+bin/rails generate controller Posts
+
+bin/rails generate controller Comments
+
+bin/rails generate controller Feedbacks
+
+bin/rails generate controller Guests
+
+建表:
+
+bin/rails generate model Post title:string content:text admin_id:integer type:string created_at:date
+
+bin/rails generate model Comment content:text post_id:integer nickname:string created_at:date allowed:integer post:references
+
+bin/rails generate model Feedback nickname:string content:text created_at:date
+
+用户登录注册系统利用devise插件实现,任务中要求的基本功能基本实现,没有掌握Bookstrap插件的使用.
